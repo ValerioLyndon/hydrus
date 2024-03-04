@@ -3798,6 +3798,10 @@ class FrameGUI( CAC.ApplicationCommandProcessorMixin, ClientGUITopLevelWindows.M
         
         ClientGUIMenus.AppendMenu( menu, tag_display_maintenance_menu, 'sibling/parent sync' )
         
+        ClientGUIMenus.AppendSeparator( menu )
+        
+        ClientGUIMenus.AppendMenuItem( menu, 'tag information', 'View metadata about all your tags.', self._ViewTagWiki )
+        
         #
         
         return ( menu, '&tags' )
@@ -4907,7 +4911,18 @@ class FrameGUI( CAC.ApplicationCommandProcessorMixin, ClientGUITopLevelWindows.M
                 self._controller.tag_display_manager = tag_display_manager
                 
                 self._controller.pub( 'notify_new_tag_display_rules' )
-                
+        
+    
+    def _ViewTagWiki( self ):
+        
+        title = 'tag information / wiki'
+        
+        frame = ClientGUITopLevelWindowsPanels.FrameThatTakesScrollablePanel( self, title )
+        
+        #panel = ClientGUIScrolledPanelsReview.MigrateTagsPanel( frame, default_tag_service_key )
+        
+        #frame.SetPanel( panel )
+            
             
         
     
