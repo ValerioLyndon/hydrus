@@ -7,6 +7,9 @@ __pycache__/
 
 ### IDE's
 
+# Visual Studio
+.vs
+
 ## IntelliJ and related IDE's (RubyMine, PhpStorm, AppCode, PyCharm)
 *.iml
 
